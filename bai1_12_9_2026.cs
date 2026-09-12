@@ -1,5 +1,3 @@
-
-
 using System;
 using System.Collections.Generic;
 
@@ -32,6 +30,7 @@ while (true)
     else
         Console.WriteLine("nhap sai, nhap lai");
 }
+Console.WriteLine($"a+b+c={a + b + c}");
 
 
 
