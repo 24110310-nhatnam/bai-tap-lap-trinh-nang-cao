@@ -1,0 +1,16 @@
+@model Sach
+@{
+    ViewData["Title"] = "Xóa sách";
+}
+<h1>Xóa sách</h1>
+<div class="alert alert-warning">Bạn có chắc chắn muốn xóa sách này không?</div>
+<dl class="row">
+    <dt class="col-sm-3">Tên sách</dt><dd class="col-sm-9">@Model.TenSach</dd>
+    <dt class="col-sm-3">Năm xuất bản</dt><dd class="col-sm-9">@Model.NamXuatBan</dd>
+    <dt class="col-sm-3">Tác giả</dt><dd class="col-sm-9">@Model.TacGia?.TenTacGia</dd>
+</dl>
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="SachId" />
+    <button type="submit" class="btn btn-danger">Xóa</button>
+    <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+</form>

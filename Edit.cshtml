@@ -1,0 +1,12 @@
+@model TacGia
+@{
+    ViewData["Title"] = "Sửa tác giả";
+}
+<h1>Sửa tác giả</h1>
+<form asp-action="Edit" asp-route-id="@Model.TacGiaId" method="post">
+    <input type="hidden" asp-for="TacGiaId" />
+    <partial name="_Form" model="Model" />
+    <button type="submit" class="btn btn-primary">Cập nhật</button>
+    <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
+</form>
+@section Scripts { <partial name="_ValidationScriptsPartial" /> }
