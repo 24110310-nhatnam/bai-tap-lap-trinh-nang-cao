@@ -1,0 +1,25 @@
+@model TacGia
+@{
+    ViewData["Title"] = "Chi tiết tác giả";
+}
+<h1>Chi tiết tác giả</h1>
+<dl class="row">
+    <dt class="col-sm-3">Tên tác giả</dt><dd class="col-sm-9">@Model.TenTacGia</dd>
+    <dt class="col-sm-3">Quốc tịch</dt><dd class="col-sm-9">@Model.QuocTich</dd>
+</dl>
+<h2>Sách của tác giả</h2>
+@if (Model.SachList.Count == 0)
+{
+    <p>Chưa có sách.</p>
+}
+else
+{
+    <ul>
+    @foreach (var sach in Model.SachList)
+    {
+        <li>@sach.TenSach (@sach.NamXuatBan)</li>
+    }
+    </ul>
+}
+<a asp-action="Edit" asp-route-id="@Model.TacGiaId" class="btn btn-primary">Sửa</a>
+<a asp-action="Index" class="btn btn-secondary">Quay lại</a>
